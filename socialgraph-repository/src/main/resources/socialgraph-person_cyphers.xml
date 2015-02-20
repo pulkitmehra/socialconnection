@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="Person.cypher.findAll">
+        <![CDATA[
+           MATCH (p: PERSON ) RETURN p
+        ]]>
+	</entry>
+
+	<entry key="Person.cypher.findByName">
+        <![CDATA[
+            MATCH (p: PERSON )
+            WHERE p.name = {name}
+            RETURN p
+        ]]>
+	</entry>
+
+	<entry key="Person.cypher.pathTo">
+        <![CDATA[
+            MATCH p = shortestPath((from:PERSON) - [:KNOWS*]- (to:PERSON) ) 
+            WHERE from.name={fromName} AND to.name={toName} return p
+        ]]>
+	</entry>
+
+</properties>
