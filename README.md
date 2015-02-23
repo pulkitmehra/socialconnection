@@ -53,16 +53,20 @@ Following should be installed
   <ul>
       <li>  Git clone this repo and CD to root of that foder
       <li>  run command <i>'mvn install tomcat:run'</i>
+      <li>  Application will run and will be initialize with small graph data set, Below is the data set
   </ul>
   
-  Application will run and will be initialize with small graph data set, Below is the data set
+
+  
+  <img src="http://s21.postimg.org/p689tmf6f/Social_Connection.png" alt="Social connection" style="padding:1px;border:thin solid black;" height="300" width="500">
+  
 </p>
 <p>
   <b>Verify REST calls (Use Accept header for JSON or XML response)</b>
    <ul>
       <li>  http://localhost:8080/socialconnection/api/social/1.0/person
-      <li>  http://localhost:8080/socialconnection/api/social/1.0/person?fromName={0}&toName={1}
-      <li>  http://localhost:8080/socialconnection/api/social/1.0/person/count?fromName={0}&toName={1}
+      <li>  http://localhost:8080/socialconnection/api/social/1.0/person?fromName=Foo&toName=Tim
+      <li>  http://localhost:8080/socialconnection/api/social/1.0/person/count?fromName=Foo&toName=Tim
   </ul>
   
   <b>For running FT and UAT test case (Make sure the tomcat server is up at localhost:8080)</b>
