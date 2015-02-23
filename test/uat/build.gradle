@@ -1,0 +1,47 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {  classpath "com.bmuschko:gradle-vagrant-plugin:2.0"  }
+}
+
+apply plugin: "com.bmuschko.vagrant"
+
+vagrant { installation { validate = false } }
+
+configurations { cucumberRuntime { extendsFrom testRuntime
+    } }
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                '-f',
+                'pretty',
+                '--glue',
+                'com.exercise.socialconnection.uat',
+                'src/test/resources'
+            ]
+        }
+    }
+}
+
+dependencies {
+
+    compile (libs.spring_web)
+    compile (libs.spring_context)
+    compile (libs.jackson_annotation)
+    compile (libs.jackson_core)
+    compile (libs.jackson_bind)
+    compile (libs.jackson_bind)
+    compile (libs.socialconnection_web)
+    compile (libs.sl4j)
+    compile (libs.sl4j_jcl)
+    compile (libs.logback)
+    
+
+
+    testCompile   (libs.cucumber_java)
+    testCompile  (libs.cucumber_junit)
+}

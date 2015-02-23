@@ -2,14 +2,14 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exercise</groupId>
-    <artifactId>socialgraph</artifactId>
+    <artifactId>socialconnection</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-neo4j.version>3.2.2.RELEASE</spring-neo4j.version>
-        <spring.version>4.1.4.RELEASE</spring.version>
+        <spring.version>4.1.3.RELEASE</spring.version>
         <neo4j.version>2.1.7</neo4j.version>
         <validation-api.version>1.0.0.GA</validation-api.version>
         <slf4j.version>1.7.1</slf4j.version>
@@ -20,6 +20,8 @@
         <fasterxml-jackson.version>2.4.4</fasterxml-jackson.version>
         <jaxb.version>2.2</jaxb.version>
         <servlet-api.version>3.1.0</servlet-api.version>
+        <json-path.version>1.2.0</json-path.version>
+        
     </properties>
 
     <dependencyManagement>
@@ -32,25 +34,13 @@
 
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
+                <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
 
@@ -130,6 +120,14 @@
                 <version>${servlet-api.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.jayway.jsonpath</groupId>
+                <artifactId>json-path</artifactId>
+                <version>${json-path.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -150,9 +148,9 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>test</scope>
-            <version>4.11</version>
+            <version>4.12</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -183,11 +181,10 @@
         </plugins>
     </build>
     <modules>
-        <module>socialgraph-core</module>
-        <module>socialgraph-repository</module>
-        <module>socialgraph-config</module>
-        <module>socialgraph-services</module>
-        <module>socialgraph-web</module>
-        <module>socialgraph-webapp</module>
+        <module>socialconnection-core</module>
+        <module>socialconnection-data</module>
+        <module>socialconnection-services</module>
+        <module>socialconnection-web</module>
+        <module>socialconnection-webapp</module>
     </modules>
 </project>

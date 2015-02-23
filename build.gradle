@@ -1,0 +1,66 @@
+ext {
+    jUnitVersion = "4.12"
+    springVersion = "4.1.4.RELEASE"
+    spockVersion = '0.7-groovy-2.0'
+    socialconnectionVersion = '0.0.1-SNAPSHOT'
+    groovyVersion = '2.3.2'
+    cucumberVersion = '1.2.0'
+    jacksonVersion = '2.4.4'
+    sl4jVersion = '1.7.1'
+    logbackVersion= '1.0.6'
+    
+    libs = [
+        junit: "junit:junit:$jUnitVersion",
+        groovy_all: "org.codehaus.groovy:groovy-all:$groovyVersion",
+        spock: "org.spockframework:spock-spring:$spockVersion",
+        spock_spring: "org.spockframework:spock-spring:$spockVersion",
+        spring_context: "org.springframework:spring-context:$springVersion",
+        spring_test: "org.springframework:spring-test:$springVersion",
+        spring_web: "org.springframework:spring-web:$springVersion",
+        cucumber_java: "info.cukes:cucumber-java:$cucumberVersion",
+        cucumber_junit: "info.cukes:cucumber-junit:$cucumberVersion",
+        jackson_annotation:"com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
+        jackson_core:"com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+        jackson_bind:"com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+        
+        socialconnection_services: "com.exercise:socialconnection-services:$socialconnectionVersion",
+        socialconnection_web: "com.exercise:socialconnection-web:$socialconnectionVersion",
+
+        sl4j:"org.slf4j:jcl-over-slf4j:$sl4jVersion",
+        sl4j_jcl:"org.slf4j:slf4j-api:$sl4jVersion",
+        logback:"ch.qos.logback:logback-classic:$logbackVersion"
+    ]
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
+allprojects {
+    group = 'com.exercise'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    test {
+        testLogging {
+            events 'started', 'passed', 'skipped', 'failed'
+        }
+    }
+
+    dependencies {
+        testCompile (libs.junit)
+        testCompile (libs.spring_test)
+    }
+}
