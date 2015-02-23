@@ -17,6 +17,8 @@ A graph based social connection web application. This application contains graph
     For detailed design overview see wiki,
     <a href="https://github.com/pulkitmehra/socialconnection/wiki/Design-Details">Wiki-Design</a>
   </p>
+  
+  
 #Technology Stack
 
 <p>
@@ -52,7 +54,7 @@ Following should be installed
   <b>For running web app</b>
   <ul>
       <li>  Git clone this repo and CD to root of that foder
-      <li>  run command <i>'mvn install tomcat:run'</i>
+      <li>  Run command <i>'mvn install tomcat:run'</i>
       <li>  Application will run and will be initialize with small graph data set, Below is the data set
   </ul>
   
@@ -71,7 +73,7 @@ Following should be installed
   
   <b>For running FT and UAT test case (Make sure the tomcat server is up at localhost:8080)</b>
   <ul>
-      <li>  run command at root of the clone folder <b>'gradle build'</b>
+      <li>  Run command at root of the clone folder <b>'gradle build'</b>
   </ul>
 </p>
 
