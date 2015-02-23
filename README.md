@@ -19,7 +19,6 @@ A graph based social connection web application. This application contains graph
   </p>
   
   
-#Technology Stack
 
 <p>
   Below is the technology stack
