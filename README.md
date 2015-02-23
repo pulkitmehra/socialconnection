@@ -53,7 +53,7 @@ Following should be installed
   <b>For running web app</b>
   <ul>
       <li>  Git clone this repo and CD to root of that foder </li>
-      <li>  Run command <i>'mvn install tomcat7:run'</i> </li>
+      <li>  Run command <i>'mvn clean install tomcat7:run'</i> </li>
       <li>  Application will run and will be initialize with small graph data set, Below is the data set </li>
   </ul>
   
