@@ -39,8 +39,7 @@ A graph based social connection web application. This application contains graph
 
 
 <b>Pre-requisite</b>
-<br/>
-Following softwares are required
+
 <p>
   <ul>
       <li>  <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK 8</a> </li>
