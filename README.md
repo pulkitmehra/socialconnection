@@ -15,7 +15,7 @@ A graph based social connection web application. This application contains graph
   </p>
   <p>
     For detailed design overview see wiki,
-    <a href="https://github.com/pulkitmehra/socialconnection/wiki/Design-Details">Wiki-Design</a>
+    <a href="https://github.com/pulkitmehra/socialconnection/wiki/Design">Wiki-Design</a>
   </p>
   
   
@@ -78,6 +78,6 @@ Following should be installed
 
 <p>
   For detailed deployment or deployment using vagrant see wiki
-<a href="https://github.com/pulkitmehra/socialconnection/wiki/Deployment-Instructions">Wiki-Deployment</a>
+<a href="https://github.com/pulkitmehra/socialconnection/wiki/Deployment">Wiki-Deployment</a>
 </p>
 
