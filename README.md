@@ -2,8 +2,8 @@
 A graph based social connection web application. This application contains graph of persons on which user can query the following
 <ol>
   <li> List of persons in graph </li>
-  <li> Path between two person.(Like linked-In, when you visit someone's profile, Linked-In shows you a path(people/freinds) who can introduce you with this person i.e friends of friends) </li>
-  <li> Get above path count. If you wanted to know how far two person are.</li>
+  <li> Path between two person.(Like linked-In, when logged in user visits someone's profile, Linked-In shows him the path of person and friends, who can introduce him with this person i.e friends of friends) </li>
+  <li> Get count of persons(path) between two given persons.</li>
 </ol>  
 
 <p>
@@ -40,7 +40,7 @@ A graph based social connection web application. This application contains graph
 
 <b>Pre-requisite</b>
 <br/>
-Following should be installed
+Following softwares are required
 <p>
   <ul>
       <li>  <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK 8</a> </li>
@@ -52,9 +52,9 @@ Following should be installed
 <p>
   <b>For running web app</b>
   <ul>
-      <li>  Git clone this repo and CD to root of that foder </li>
-      <li>  Run command <i>'mvn clean install tomcat7:run'</i> </li>
-      <li>  Application will run and will be initialize with small graph data set, Below is the data set </li>
+      <li>  Git clone this repo and CD to root of that foder say its 'home' </li>
+      <li>  Run maven command 'mvn clean install tomcat7:run' </li>
+      <li>  Application will be initialize with a small graph data set and tomcat server will start on 8080. Below is the data set </li>
   </ul>
   
 
@@ -63,11 +63,12 @@ Following should be installed
   
 </p>
 <p>
-  <b>Verify REST calls (Use Accept header for JSON or XML response)</b>
+  <b>Verify REST web service calls</b>
    <ul>
-      <li>  http://localhost:8080/socialconnection/api/social/1.0/person </li>
-      <li>  http://localhost:8080/socialconnection/api/social/1.0/person?fromName=Foo&toName=Tim </li>
-      <li>  http://localhost:8080/socialconnection/api/social/1.0/person/count?fromName=Foo&toName=Tim </li>
+      <li>  Set Accept header as application/xml or application/json
+      <li>  GET http://localhost:8080/socialconnection/api/social/1.0/person </li>
+      <li>  GET http://localhost:8080/socialconnection/api/social/1.0/person?fromName=Foo&toName=Tim </li>
+      <li>  GET http://localhost:8080/socialconnection/api/social/1.0/person/count?fromName=Foo&toName=Tim </li>
   </ul>
   
   <b>For running FT and UAT test case (Make sure the tomcat server is up at localhost:8080)</b>
