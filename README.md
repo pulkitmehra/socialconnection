@@ -52,9 +52,9 @@ Following softwares are required
 <p>
   <b>For running web app</b>
   <ul>
-      <li>  Git clone this repo and CD to root of that foder say its 'home' </li>
+      <li>  Git clone this repo and CD to root of that folder</li>
       <li>  Run maven command 'mvn clean install tomcat7:run' </li>
-      <li>  Application will be initialize with a small graph data set and tomcat server will start on 8080. Below is the data set </li>
+      <li>  Application will be deployed and initialized with a small person data set. Tomcat server will boot at port 8080. Below is the data set </li>
   </ul>
   
 
@@ -70,7 +70,9 @@ Following softwares are required
       <li>  GET http://localhost:8080/socialconnection/api/social/1.0/person?fromName=Foo&toName=Tim </li>
       <li>  GET http://localhost:8080/socialconnection/api/social/1.0/person/count?fromName=Foo&toName=Tim </li>
   </ul>
-  
+</p>
+
+<p>
   <b>For running FT and UAT test case (Make sure the tomcat server is up at localhost:8080)</b>
   <ul>
       <li>  Run command at root of the clone folder <b>'gradle build'</b> </li>
